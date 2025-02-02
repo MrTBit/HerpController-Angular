@@ -1,5 +1,5 @@
 export interface RealTimeSensorData {
-  deviceId: number;
+  DeviceId: number;
   SensorData: RealTimeSensorReading[]
 }
 

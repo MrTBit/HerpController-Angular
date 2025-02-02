@@ -1,25 +1,26 @@
-import { Component } from '@angular/core';
-import {SignalrService} from '../services/signalr.service';
+import {Component, OnInit} from '@angular/core';
 import {HerpControllerDataService} from '../services/herpcontrollerdata.service';
 import {DeviceModel} from '../models/devicemodel';
+import {RealtimedeviceComponent} from '../realtimedevice/realtimedevice.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [
+    RealtimedeviceComponent
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-  private _devices: DeviceModel[] = [];
+  devices: DeviceModel[] = [];
 
-  constructor(public signalRService: SignalrService, public dataService: HerpControllerDataService) {
+  constructor(private dataService: HerpControllerDataService) {
   }
-
 
   ngOnInit(): void {
     this.dataService.getAllDevices().subscribe(devices => {
-      this._devices = devices;
+      this.devices = devices;
     });
   }
 }
