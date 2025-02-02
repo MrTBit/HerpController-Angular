@@ -1,0 +1,15 @@
+<form [formGroup]="deviceSensorForm">
+  <div class="flex flex-row">
+    <mat-form-field>
+      <mat-label>Pin</mat-label>
+      <input matInput formControlName="pin">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Sensor Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option [value]="DhtSensorType.DHT22">DHT22</mat-option>
+        <mat-option [value]="DhtSensorType.DHT11">DHT11</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>

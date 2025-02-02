@@ -1,0 +1,14 @@
+<mat-list class="border-t border-gray-400">
+  @for (device of devices; track device.id) {
+    <mat-list-item class="border-b border-gray-400">
+      <span matListItemTitle>{{device.name}}</span>
+      <button mat-icon-button matListItemMeta [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/config/api', device.id]">API Config</button>
+          <button mat-menu-item [routerLink]="['/config/hardware', device.id]">Hardware Config</button>
+      </mat-menu>
+    </mat-list-item>
+  }
+</mat-list>

@@ -1,0 +1,29 @@
+@if (!sensorForm) {
+  <div></div>
+} @else {
+  <form [formGroup]="sensorForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-row">
+      <mat-form-field class="mr-2">
+        <mat-label>Sensor Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="mr-2">
+        <mat-label>Min Temp</mat-label>
+        <input matInput formControlName="minTemp">
+      </mat-form-field>
+      <mat-form-field class="mr-2">
+        <mat-label>Max Temp</mat-label>
+        <input matInput formControlName="maxTemp">
+      </mat-form-field>
+      <mat-form-field class="mr-2">
+        <mat-label>Min Humidity</mat-label>
+        <input matInput formControlName="minHumidity">
+      </mat-form-field>
+      <mat-form-field class="mr-2">
+        <mat-label>Max Humidity</mat-label>
+        <input matInput formControlName="maxHumidity">
+      </mat-form-field>
+      <button [disabled]="!sensorForm.valid" mat-button type="submit">Save</button>
+    </div>
+  </form>
+}

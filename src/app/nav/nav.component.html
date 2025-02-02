@@ -1,0 +1,26 @@
+<div class="flex flex-col h-screen max-h-screen">
+  <mat-toolbar class="border-b border-gray-400">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer-container class="h-full">
+    <mat-drawer mode="side" opened>
+      <div class="flex flex-col m-2 rounded p-2 bg-gray-800">
+        <p class="text-2xl">HerpController</p>
+        <button mat-button>
+          Home
+        </button>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div
+        class="h-full m-2 p-2 rounded flex flex-col bg-gray-800"
+        style="max-height: calc(100% - 16px)"
+      >
+<!--        TODO: dynamic view based on route/sidenav -->
+        <app-dashboard></app-dashboard>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

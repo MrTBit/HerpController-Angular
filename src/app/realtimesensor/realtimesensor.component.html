@@ -1,0 +1,9 @@
+<div class="flex flex-col m-6">
+  <div>{{sensor().name}}</div>
+  <div class="flex flex-row">
+  <div class="pr-2">T: {{temp | number: '2.1-1'}}°F</div>
+  @if (sensor().type === SensorType.DHT) {
+    <div>H: {{humidity | number: '2.1-1'}}%</div>
+  }
+  </div>
+</div>
